@@ -88,26 +88,37 @@ import Foundation
 
 //21 APRIL ALGORITHM END
 
-//22 APRIL ALGORITH START
+//22 APRIL ALGORITHM START
 
 
 
+//
+//func nbDig(_ n: Int, _ d: Int) -> Int {
+//    var nArray:[Int] = []
+//    var count = 0
+//    for i in 0...n{
+//        let x = i*i
+//        nArray.append(x)
+//    }
+//    for j in nArray {
+//        for l in "\(j)" {
+//            if String(l).contains("\(d)") {
+//                count += 1
+//            }
+//        }
+//    }
+//    return count
+//}
+//nbDig(8, 5)
+//
 
-func nbDig(_ n: Int, _ d: Int) -> Int {
-    var nArray:[Int] = []
-    var count = 0
-    for i in 0...n{
-        let x = i*i
-        nArray.append(x)
-    }
-    for j in nArray {
-        for l in "\(j)" {
-            if String(l).contains("\(d)") {
-                count += 1
-            }
-        }
-    }
-    return count
+func findUniq(_ arr: [Int]) -> Int {
+    let newArray = arr.filter { !arr.contains($0) }
+    print(newArray)
+//    let x = Int(newArray)
+  return 0 // unique integer in the array
 }
-nbDig(8, 5)
+
+
+
 
