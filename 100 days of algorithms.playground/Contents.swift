@@ -71,6 +71,7 @@ func persistence(for num: Int) -> Int {
        // print(total)
         if total >= 10{
             persistence(for:total)
+            
         }
     }
     count+=1
@@ -80,8 +81,7 @@ func persistence(for num: Int) -> Int {
 
 
 
-
-persistence(for:3999)
+persistence(for:277777788888899)
 
 
 
