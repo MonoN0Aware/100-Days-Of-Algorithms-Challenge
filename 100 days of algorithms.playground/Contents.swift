@@ -113,12 +113,11 @@ import Foundation
 //
 
 func findUniq(_ arr: [Int]) -> Int {
-    let newArray = arr.filter { !arr.contains($0) }
-    print(newArray)
-//    let x = Int(newArray)
-  return 0 // unique integer in the array
+    let objectSet = Set(arr.map { $0 })
+    return 0
 }
 
+findUniq([1,1,3,1,1,1,1])
 
 
 
