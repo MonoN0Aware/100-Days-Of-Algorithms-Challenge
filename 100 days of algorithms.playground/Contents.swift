@@ -120,4 +120,16 @@ func findUniq(_ arr: [Int]) -> Int {
 findUniq([1,1,3,1,1,1,1])
 
 
+//22 APRIL END
 
+
+
+
+//23 APRIL START
+func angle(_ n: Int) -> Int {
+return 180*(n-2)
+}
+
+let x:[Int] = [1,2,3,4,4,5,3,2,13,35]
+
+//23 April END
