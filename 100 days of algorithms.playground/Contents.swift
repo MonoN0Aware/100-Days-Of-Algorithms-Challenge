@@ -112,24 +112,83 @@ import Foundation
 //nbDig(8, 5)
 //
 
-func findUniq(_ arr: [Int]) -> Int {
-    let objectSet = Set(arr.map { $0 })
-    return 0
-}
-
-findUniq([1,1,3,1,1,1,1])
-
-
-//22 APRIL END
-
-
-
-
-//23 APRIL START
-func angle(_ n: Int) -> Int {
-return 180*(n-2)
-}
-
-let x:[Int] = [1,2,3,4,4,5,3,2,13,35]
+//func findUniq(_ arr: [Int]) -> Int {
+//    let objectSet = Set(arr.map { $0 })
+//    return 0
+//}
+//
+//findUniq([1,1,3,1,1,1,1])
+//
+//
+////22 APRIL END
+//
+//
+//
+//
+////23 APRIL START
+//func angle(_ n: Int) -> Int {
+//return 180*(n-2)
+//}
+//
+//let x:[Int] = [1,2,3,4,4,5,3,2,13,35]
 
 //23 April END
+
+//24 April BEGIN
+
+//Count the number of Duplicates
+//Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+//
+//Example
+//"abcde" -> 0 # no characters repeats more than once
+//"aabbcde" -> 2 # 'a' and 'b'
+//"aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+//"indivisibility" -> 1 # 'i' occurs six times
+//"Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+//"aA11" -> 2 # 'a' and '1'
+//"ABBA" -> 2 # 'A' and 'B' each occur twice
+
+
+//SOLUTION
+
+func countDuplicates(_ s:String) -> Int {
+    var count = 0
+       let sToArr = Array(s.lowercased())
+    let sToArrSorted = sToArr.sorted(by: <)
+
+    let mappedItems = sToArrSorted.map { ($0, 1) }
+    let counts = Dictionary(mappedItems, uniquingKeysWith: +)
+    for (_, value) in counts {
+        if value>1{
+//            print("\(key) -> \(value)")
+            count+=1
+        }
+    }
+
+
+  return count
+}
+
+
+
+ countDuplicates("aa bb cc dd ee ff gg hh ii jj kk ll mm nn oo pp qq rr ss tt uu vv ww xx yy zz")
+//
+//Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+//
+//Return your answer as a number.
+
+//func sumMix(_ arr: [Any]) -> Int {
+////    return arr.reduce(0, {($0 + Int("\($1)")!)
+//        return arr.reduce(0, {$0 + Int("\($1)")!})
+//
+//    }
+//func sumMix(_ arr: [Any]) -> Int {
+// return arr.reduce(0, {
+//   $0 + Int("\($1)")!
+// })
+//}
+//
+//
+//sumMix([9, 3, "7", "3"])
+
+//24 April End
