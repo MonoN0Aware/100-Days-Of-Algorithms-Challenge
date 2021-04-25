@@ -150,28 +150,28 @@ import Foundation
 
 
 //SOLUTION
-
-func countDuplicates(_ s:String) -> Int {
-    var count = 0
-       let sToArr = Array(s.lowercased())
-    let sToArrSorted = sToArr.sorted(by: <)
-
-    let mappedItems = sToArrSorted.map { ($0, 1) }
-    let counts = Dictionary(mappedItems, uniquingKeysWith: +)
-    for (_, value) in counts {
-        if value>1{
-//            print("\(key) -> \(value)")
-            count+=1
-        }
-    }
-
-
-  return count
-}
-
-
-
- countDuplicates("aa bb cc dd ee ff gg hh ii jj kk ll mm nn oo pp qq rr ss tt uu vv ww xx yy zz")
+//
+//func countDuplicates(_ s:String) -> Int {
+//    var count = 0
+//       let sToArr = Array(s.lowercased())
+//    let sToArrSorted = sToArr.sorted(by: <)
+//
+//    let mappedItems = sToArrSorted.map { ($0, 1) }
+//    let counts = Dictionary(mappedItems, uniquingKeysWith: +)
+//    for (_, value) in counts {
+//        if value>1{
+////            print("\(key) -> \(value)")
+//            count+=1
+//        }
+//    }
+//
+//
+//  return count
+//}
+//
+//
+//
+// countDuplicates("aa bb cc dd ee ff gg hh ii jj kk ll mm nn oo pp qq rr ss tt uu vv ww xx yy zz")
 //
 //Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
 //
@@ -192,3 +192,75 @@ func countDuplicates(_ s:String) -> Int {
 //sumMix([9, 3, "7", "3"])
 
 //24 April End
+
+
+//25 April Start
+
+func chooseBestSum(_ t: Int, _ k: Int, _ ls: [Int]) -> Int {
+    
+
+
+    return 0
+}
+
+
+func findTwoSumSorted(_ k:Int, _ t: Int,_ ls: [Int] ) {
+    //t is max number of miles, ls is array of distances. add K which is number of towns to be visited
+    let sortedArray = ls.sorted()
+    var leftIndex = 0
+    var rightIndex = sortedArray.count - 1
+
+    while leftIndex < rightIndex {
+        let leftElement = ls[leftIndex]
+        let rightElement = ls[rightIndex]
+        let currentSum = leftElement + rightElement + (leftElement + 1)
+
+        if currentSum == t {
+            print("(\(leftElement), \(rightElement),\(leftElement+1)")
+            return
+        } else if currentSum < t {
+            leftIndex += 1
+        } else {
+            rightIndex -= 1
+
+
+        }
+    }
+}
+
+//var inputArray = [74, 100, 57, 58, 60]
+//var sum = 174
+
+//func findTwoSumHash(inputArray: [Int], sum: Int) {
+//    var dictionary: [Int: Int] = [:]
+//
+//    for element in inputArray {
+//        let difference = sum - element
+//
+//        if let _ = dictionary[difference] {
+//            print("(\(element), \(difference))")
+//        }
+//
+//        dictionary[element] = element
+//    }
+//}
+//
+//findTwoSumHash(inputArray: inputArray, sum: sum)
+findTwoSumSorted(3, 174,[50, 55, 56, 57, 58])
+
+
+func findDifference(_ a: [Int], _ b: [Int]) -> Int {
+    let volumeA = a.reduce(1, *)
+    let volumeB = b.reduce(1, *)
+    let sum = volumeA-volumeB
+    return abs(sum)
+}
+
+findDifference([9, 7, 2], [5, 2, 2])
+
+
+
+let array = [1,2,3,4,5,6,7]
+
+func addOne(n1:Int)->
+array.map
