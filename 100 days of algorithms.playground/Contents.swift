@@ -490,15 +490,15 @@ func combos<T>(elements: Array<T>, kc: Int) -> [[T]] {
 //
 //countBinarySubstrings("10101010101101101001")
 
-func disemvowel(_ s: String) -> String {
-    let vowels = ["a","e","i","o","u","A","E","I","O","U"]
-var str = s
-    for i in vowels{
-        str = str.split(separator: Character(i)).joined()
-    }
-return str
-}
-disemvowel("lebron is the greatest player of all time ")
+//func disemvowel(_ s: String) -> String {
+//    let vowels = ["a","e","i","o","u","A","E","I","O","U"]
+//var str = s
+//    for i in vowels{
+//        str = str.split(separator: Character(i)).joined()
+//    }
+//return str
+//}
+//disemvowel("lebron is the greatest player of all time ")
 
 
 /*
@@ -547,29 +547,29 @@ Sample input and output
 //accum("cwAt") -> "C-Ww-Aaa-Tttt"
 //The parameter of accum is a string which includes only letters from a..z and A..Z.
 
-
-func accum(_ s: String) -> String {
-   let arrS = (s)
-    var counter = 1
-    var holder = ""
-    
-    
-   
-    for i in arrS{
-       
-     holder += repeatElement(i, count: counter)
-        holder = holder.capitalized
-        holder += "-"
-     counter+=1
-        
-        }
-    holder.removeLast()
-    
-  return holder
-    
-}
-
-accum("RqaEzty")
+//
+//func accum(_ s: String) -> String {
+//   let arrS = (s)
+//    var counter = 1
+//    var holder = ""
+//
+//
+//
+//    for i in arrS{
+//
+//     holder += repeatElement(i, count: counter)
+//        holder = holder.capitalized
+//        holder += "-"
+//     counter+=1
+//
+//        }
+//    holder.removeLast()
+//
+//  return holder
+//
+//}
+//
+//accum("RqaEzty")
 
 
 //func century(_ year: Int)->Int{
@@ -590,95 +590,84 @@ accum("RqaEzty")
 //}
 //
 //century(2002)
-
-DispatchQueue.global().async {
-    print("Inside")
-}
-print("Outside")
-
-
-let session = URLSession.shared
-let url = URL(string: "...")!
-
-func reverse(_ str:String)->String{
-    
-    let reversed = String(str.reversed())
-    
-    
-    return reversed
-    
-}
-
-
-reverse("1234")
-
-func bmi(_ weight: Int, _ height: Double) -> String {
-    let height_2 = pow(height, 2)
-    
-    let bmiFR = Double(weight)/height_2
-    if bmiFR<=18.5 {
-        return "Underweight"
-    }else if bmiFR<=25.0{
-        return "Normal"
-    }else if bmiFR<=30.0{
-        return "Overweight"
-    }else {
-        return "Obese"
-    }
-}
-
-bmi(110, 1.80)
-
-
-
+//
+//DispatchQueue.global().async {
+//    print("Inside")
+//}
+//print("Outside")
+//
+//
+//let session = URLSession.shared
+//let url = URL(string: "...")!
+//
+//func reverse(_ str:String)->String{
+//
+//    let reversed = String(str.reversed())
+//
+//
+//    return reversed
+//
+//}
+//
+//
+//reverse("1234")
+//
+//func bmi(_ weight: Int, _ height: Double) -> String {
+//    let height_2 = pow(height, 2)
+//
+//    let bmiFR = Double(weight)/height_2
+//    if bmiFR<=18.5 {
+//        return "Underweight"
+//    }else if bmiFR<=25.0{
+//        return "Normal"
+//    }else if bmiFR<=30.0{
+//        return "Overweight"
+//    }else {
+//        return "Obese"
+//    }
+//}
+//
+//bmi(110, 1.80)
+//
 
 
-//The description is rather long but it tries to explain what a financing plan is.
 //
-//The fixed monthly payment for a fixed rate mortgage is the amount paid by the borrower every month that ensures that the loan is paid off in full with interest at the end of its term.
+//An array A consisting of N integers is given. Rotation of the array means that each element is shifted right by one index, and the last element of the array is moved to the first place. For example, the rotation of array A = [3, 8, 9, 7, 6] is [6, 3, 8, 9, 7] (elements are shifted right by one index and 6 is moved to the first place).
 //
-//The monthly payment formula is based on the annuity formula. The monthly payment c depends upon:
+//The goal is to rotate array A K times; that is, each element of A will be shifted to the right K times.
 //
-//rate - the monthly interest rate is expressed as a decimal, not a percentage. The monthly rate is simply the given yearly percentage rate divided by 100 and then by 12.
+//Write a function:
 //
-//term - the number of monthly payments, called the loan's term.
+//public func solution(_ A : inout [Int], _ K : Int) -> [Int]
 //
-//principal - the amount borrowed, known as the loan's principal (or balance).
+//that, given an array A consisting of N integers and an integer K, returns the array A rotated K times.
 //
-//First we have to determine c.
+//For example, given
 //
-//We have: c = n /d with n = r * balance and d = 1 - (1 + r)**(-term) where ** is the power function (you can look at the reference below).
+//    A = [3, 8, 9, 7, 6]
+//    K = 3
+//the function should return [9, 7, 6, 3, 8]. Three rotations were made:
 //
-//The payment c is composed of two parts. The first part pays the interest (let us call it int) due for the balance of the given month, the second part repays the balance (let us call this part princ) hence for the following month we get a new balance = old balance - princ with c = int + princ.
+//    [3, 8, 9, 7, 6] -> [6, 3, 8, 9, 7]
+//    [6, 3, 8, 9, 7] -> [7, 6, 3, 8, 9]
+//    [7, 6, 3, 8, 9] -> [9, 7, 6, 3, 8]
+//For another example, given
 //
-//Loans are structured so that the amount of principal returned to the borrower starts out small and increases with each mortgage payment. While the mortgage payments in the first years consist primarily of interest payments, the payments in the final years consist primarily of principal repayment.
+//    A = [0, 0, 0]
+//    K = 1
+//the function should return [0, 0, 0]
 //
-//A mortgage's amortization schedule provides a detailed look at precisely what portion of each mortgage payment is dedicated to each component.
+//Given
 //
-//In an example of a $100,000, 30-year mortgage with a rate of 6 percents the amortization schedule consists of 360 monthly payments. The partial amortization schedule below shows with 2 decimal floats the balance between principal and interest payments.
+//    A = [1, 2, 3, 4]
+//    K = 4
+//the function should return [1, 2, 3, 4]
 //
-//--    num_payment    c    princ    int    Balance
-//--    1    599.55    99.55    500.00    99900.45
-//--    ...    599.55    ...    ...    ...
-//--    12    599.55    105.16    494.39    98,771.99
-//--    ...    599.55    ...    ...    ...
-//--    360    599.55    596.57    2.98    0.00
-//Task:
-//Given parameters
+//Assume that:
 //
-//rate: annual rate as percent (don't forgent to divide by 100*12)
-//bal: original balance (borrowed amount)
-//term: number of monthly payments
-//num_payment: rank of considered month (from 1 to term)
-//the function amort will return a formatted string (for example):
-//
-//"num_payment %d c %.0f princ %.0f int %.0f balance %.0f" (with arguments num_payment, c, princ, int, balance)
-//
-//In Common Lisp: return a list with num-payment, c, princ, int, balance each rounded.
-//
-//Examples:
-//amort(6, 100000, 360, 1) ->
-//"num_payment 1 c 600 princ 100 int 500 balance 99900"
-//
-//amort(6, 100000, 360, 12) ->
-//"num_payment 12 c 600 princ 105 int 494 balance 98772"
+//N and K are integers within the range [0..100];
+//each element of array A is an integer within the range [−1,000..1,000].
+//In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
+
+
+
