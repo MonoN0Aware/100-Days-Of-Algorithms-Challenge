@@ -669,5 +669,181 @@ Sample input and output
 //each element of array A is an integer within the range [−1,000..1,000].
 //In your solution, focus on correctness. The performance of your solution will not be the focus of the assessment.
 
+//public func solution(_ A :[Int], _ K : Int) -> [Int]{
+////    let slice1 = A[0..<K]
+////    let slice2 = A[K...]
+////    return Array(slice2)+Array(slice1)
+//    var a = A
+//    for _ in 0...(K - 1) {
+//           a.append(a[0])
+//        print(a)
+//           a.remove(at: 0)
+//        print(a)
+//         }
+//        return a
+//     }
+//
+//
+//
+//solution([3, 8, 9, 7, 6], 3)
+////solution([1, 2, 3, 4], 4)
+//solution([1,2,3,4],4)
+
+//var num = 22
+//var binary = Int(String(num,radix: 2))
+//
+//public func solution(_ N : Int) -> Int {
+//    let num = N
+//    let binary = String(num,radix: 2)
+//    var count = 0
+//    var max = 0
+//    for i in binary {
+//        if i == "0"{
+//            count += 1
+//        }else {
+//            if count > max {
+//                max = count
+//            }
+//            count = 0
+//        }
+//    }
+//    return max
+//}
 
 
+public func solution(_ N : Int) -> Int {
+    let binary = String(N, radix: 2)
+    print(binary)
+    
+    var arr: [Int] = []
+    for (index, value) in binary.enumerated() {
+        if value == "1" {
+            arr.append(index)
+        }
+    }
+    var final = Array<Int>()
+    for i in 0..<arr.count - 1 {
+        let res = (arr[i+1] - arr[i]) - 1
+        if res == 0 {
+            continue
+        }
+        print(res)
+        final.append(res)
+    }
+    return (Int(final.max() ?? 0))
+}
+
+solution(1041)
+
+
+
+//Task:
+//Given a list of integers, determine whether the sum of its elements is odd or even.
+//
+//Give your answer as a string matching "odd" or "even".
+//
+//If the input array is empty consider it as: [0] (array with a zero).
+//
+//Examples:
+//Input: [0]
+//Output: "even"
+//
+//Input: [0, 1, 4]
+//Output: "odd"
+//
+//Input: [0, -1, -5]
+//Output: "even"
+
+
+//func sumEvenOrOdd(Arr:[Int])->String{
+//    let arr = Arr
+//    let newarr = arr.reduce(0, +)
+//
+//    if newarr%2 == 0{
+//        return "Even"
+//    }else{
+//
+//        return "Odd"
+//    }
+//
+////    function oddOrEven(array) {
+////        let newarr = array.reduce((accumulator, currentValue) =>   accumulator + currentValue , 0)
+////         return  newarr%2==0 ? "even":"odd"
+////
+////    }
+//
+//}
+//
+//
+//
+//
+//sumEvenOrOdd(Arr: [0,-1,5])
+
+
+//func highAndLow(_ numbers:String)->String{
+////    let xx = numbers.sorted()
+////    print(xx)
+////    let x = Array(numbers.sorted(by: <))
+////
+////    for i in x {
+////        if i == " "{
+////            break
+////        }else{
+////            let y = x.first
+////            let z = x.last
+////          //  return (\(z!),\(y!))
+////        }
+////    }
+////
+////
+////    //return "\(y!),\(z!)"
+////    return y
+//    var array:[String] = []
+//    let abc = Array(numbers)
+//    for i in abc{
+//        if i != " "{
+//            array.append(String(i))
+//        }
+//
+//    }
+//    let x = array.max()!
+//    let y = array.min()!
+//
+//    return "\(x),\(y)"
+//}
+////highAndLow("1 2 3 4 5")
+//highAndLow("4 5 29 54 4 0 -214 542 -64 1 -3 6 -6")
+
+
+
+
+func nthEven(_ n: Int) -> Int {
+    return (n-1)*2
+}
+
+nthEven(100)
+
+func maxMultiple(_ d: Int, _ b: Int) -> Int {
+//    Given a Divisor and a Bound , Find the largest integer N , Such That ,
+//
+//    Conditions :
+//    N is divisible by divisor
+//
+//    N is less than or equal to bound
+//
+//    N is greater than 0.
+    var array:[Int] = []
+    for i in 0...b{
+        if i%d == 0 && i <= b{
+            array.append(i)
+        }
+    }
+    return array.max()!
+//    return b-(b%d)
+}
+
+//b-b%d
+
+maxMultiple(37,200)
+
+//200%37
