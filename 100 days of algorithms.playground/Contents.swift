@@ -838,3 +838,10 @@ func maxMultiple(_ d: Int, _ b: Int) -> Int {
 maxMultiple(10,50)
 
 //200%37
+
+
+
+
+func potatoes (_ p0: Int, _ w0: Int, _ p1: Int) -> Int {
+    return w0 * (100 - p0) / (100 - p1)
+}
