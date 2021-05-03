@@ -780,39 +780,28 @@ solution(1041)
 //sumEvenOrOdd(Arr: [0,-1,5])
 
 
-//func highAndLow(_ numbers:String)->String{
-////    let xx = numbers.sorted()
-////    print(xx)
-////    let x = Array(numbers.sorted(by: <))
-////
-////    for i in x {
-////        if i == " "{
-////            break
-////        }else{
-////            let y = x.first
-////            let z = x.last
-////          //  return (\(z!),\(y!))
-////        }
-////    }
-////
-////
-////    //return "\(y!),\(z!)"
-////    return y
-//    var array:[String] = []
-//    let abc = Array(numbers)
-//    for i in abc{
-//        if i != " "{
-//            array.append(String(i))
-//        }
-//
+func highAndLow(_ numbers:String)->String{
+//    let xxx = Int(numbers)
+//    for i in numbers{
+//        let x = Int(i)
 //    }
-//    let x = array.max()!
-//    let y = array.min()!
-//
-//    return "\(x),\(y)"
-//}
-////highAndLow("1 2 3 4 5")
-//highAndLow("4 5 29 54 4 0 -214 542 -64 1 -3 6 -6")
+    
+    var array:[String] = []
+    let abc = Array(numbers)
+    for i in abc{
+        if i != " "{
+            array.append(String(i))
+        }
+
+    }
+    print(array)
+    let x = array.max()!
+    let y = array.min()!
+
+    return "\(x),\(y)"
+}
+//highAndLow("1 2 3 4 5")
+highAndLow("4 5 29 54 4 0 -214 542 -64 1 -3 6 -6")
 
 
 
@@ -839,11 +828,13 @@ func maxMultiple(_ d: Int, _ b: Int) -> Int {
         }
     }
     return array.max()!
-//    return b-(b%d)
+   // return b - (b % d)
+    
+    //10 ,50 50%10 = 0, 50 -(0) = 50
 }
 
 //b-b%d
 
-maxMultiple(37,200)
+maxMultiple(10,50)
 
 //200%37
